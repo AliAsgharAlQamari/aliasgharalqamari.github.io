@@ -67,7 +67,7 @@ const ProjectsSection = () => (
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                 <p.icon size={20} className="text-primary" />
               </div>
-              <ExternalLink size={16} className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* <ExternalLink size={16} className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" /> */}
             </div>
             <h3 className="font-display font-semibold text-foreground mb-2">{p.title}</h3>
             <p className="text-xs font-medium text-primary mb-3">{p.tech}</p>

@@ -23,7 +23,7 @@ const HeroSection = () => {
               <span className="gradient-text">Ali Asghar Al Qamari</span>
             </h1>
             <p className="font-display text-lg sm:text-xl text-muted-foreground font-medium mb-6">
-              Java Developer | Power BI Developer | Data Analyst | Python Developer
+              Python Developer | Power BI | Data Analyst 
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-lg mb-8">
               I build data-driven solutions using Python and Power BI,

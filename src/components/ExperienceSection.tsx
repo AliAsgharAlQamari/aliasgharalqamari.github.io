@@ -4,8 +4,8 @@ import { Briefcase } from "lucide-react";
 const jobs = [
   {
     role: "Data Analyst / Python Developer",
-    company: "ABC Analytics Solutions",
-    period: "Jan 2023 – Present",
+    company: "Techlogix Private Limited",
+    period: "Feb 2023 – Dec 2023",
     bullets: [
       "Built Python scripts to automate repetitive reporting tasks, reducing manual work by 40%.",
       "Cleaned and transformed large datasets using Pandas for reporting and analysis.",
@@ -15,8 +15,8 @@ const jobs = [
   },
   {
     role: "Power BI Developer",
-    company: "Insight Metrics Pvt. Ltd.",
-    period: "Jun 2021 – Dec 2022",
+    company: "AG Consultraining (Pvt.) Ltd.",
+    period: "Oct 2021 – Dec 2022",
     bullets: [
       "Designed dynamic Power BI dashboards for sales, operations, and performance tracking.",
       "Built DAX measures and KPIs for executive reporting.",
@@ -26,7 +26,7 @@ const jobs = [
   },
   {
     role: "Junior Data Analyst",
-    company: "DataBridge Technologies",
+    company: "Arbisoft",
     period: "Jan 2020 – May 2021",
     bullets: [
       "Assisted in preparing reports and dashboards using Excel, SQL, and Power BI.",

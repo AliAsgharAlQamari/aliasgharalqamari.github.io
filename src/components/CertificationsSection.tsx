@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
 const certs = [
-  "Python for Data Analysis",
+  "Python Basic",
+  "Python Functions, Files, and Dictionaries",
   "Power BI Dashboard Development",
   "Data Visualization and Reporting",
   "SQL and Excel for Analytics",
