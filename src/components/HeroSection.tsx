@@ -20,7 +20,7 @@ const HeroSection = () => {
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
               Hi, I'm{" "}
-              <span className="gradient-text">[Your Name]</span>
+              <span className="gradient-text">Ali Asghar Al Qamari</span>
             </h1>
             <p className="font-display text-lg sm:text-xl text-muted-foreground font-medium mb-6">
               Python Developer | Power BI Developer | Data Analyst
