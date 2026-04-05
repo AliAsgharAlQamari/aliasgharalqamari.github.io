@@ -1,19 +1,42 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "my-protfolio";
+const EMAILJS_TEMPLATE_ID = "template_4ws2hvn";
+const EMAILJS_PUBLIC_KEY = "OfyZbTTBa_Qs9X3nh";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "Thank you for reaching out. I'll get back to you soon." });
-    setForm({ name: "", email: "", message: "" });
+    setSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast({ title: "Message sent!", description: "Thank you for reaching out. I'll get back to you soon." });
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      toast({ title: "Failed to send", description: "Something went wrong. Please try again.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -42,14 +65,11 @@ const ContactSection = () => {
             </p>
 
             <div className="space-y-4">
-              <a href="mailto:yourname@email.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
-                <Mail size={20} /> yourname@email.com
+              <a href="mailto:asgharalqamari@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+                <Mail size={20} /> asgharalqamari@gmail.com
               </a>
-              <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} /> linkedin.com/in/yourname
-              </a>
-              <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
-                <Github size={20} /> github.com/yourname
+              <a href="https://www.linkedin.com/in/ali-asghar-al-qamari-423a81174" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin size={20} /> LinkedIn/AliAsgharAlQamari
               </a>
             </div>
           </motion.div>
@@ -85,9 +105,9 @@ const ContactSection = () => {
               required
               maxLength={1000}
             />
-            <Button type="submit" size="lg" className="w-full font-medium">
+            <Button type="submit" size="lg" className="w-full font-medium" disabled={sending}>
               <Send size={18} className="mr-2" />
-              Send Message
+              {sending ? "Sending..." : "Send Message"}
             </Button>
           </motion.form>
         </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -43,6 +43,12 @@ const HeroSection = () => {
                   Contact Me
                 </a>
               </Button>
+              <Button asChild variant="outline" size="lg" className="font-medium">
+                <a href="/AliAsgharAlQamari_Resume.pdf" download>
+                  <FileDown size={18} className="mr-2" />
+                  View My Resume
+                </a>
+              </Button>
             </div>
           </motion.div>
 
@@ -52,10 +58,12 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
-              <div className="w-48 h-48 sm:w-60 sm:h-60 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                <span className="font-display text-5xl sm:text-6xl font-bold text-primary">AA</span>
-              </div>
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20 overflow-hidden">
+              <img
+                src="/dp.jpeg"
+                alt="Ali Asghar Al Qamari"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
           </motion.div>
         </div>
