@@ -54,7 +54,7 @@ const HeroSection = () => {
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
               <div className="w-48 h-48 sm:w-60 sm:h-60 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                <span className="font-display text-5xl sm:text-6xl font-bold text-primary">YN</span>
+                <span className="font-display text-5xl sm:text-6xl font-bold text-primary">AA</span>
               </div>
             </div>
           </motion.div>
